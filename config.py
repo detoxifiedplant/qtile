@@ -57,13 +57,13 @@ keys = [
     Key([mod], "c", lazy.spawn("google-chrome-stable"), desc="launch chrome"),
     Key([mod], "a", lazy.spawn("nemo"), desc="launch nemo"),
     Key([mod], "e", lazy.spawn("alacritty -e ranger"), desc="launch ranger"),
-    Key([mod], "m", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod], "f", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod], "r", lazy.spawn("rofi -show combi"), desc="Spawn Rofi"),
     # Toggle between different layouts as defined below
     # Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     # Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([mod, "mod1"], "r", lazy.reload_config(), desc="Reload the config"),
+    Key([mod, "mod1"], "e", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "mod1"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     # Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
@@ -115,10 +115,10 @@ catppuccin = {
 }
 
 layouts = [
-    # layout.MonadTall(
-    #     margin=3,
-    #     border_width=2,
-    #     ),
+    layout.MonadTall(
+        margin=3,
+        border_width=2,
+        ),
     layout.Columns(border_focus_stack=["#89dceb", "#89dceb"], border_width=2),
     # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=3),
     layout.Max(),
