@@ -4,6 +4,8 @@ from libqtile.lazy import lazy
 import subprocess
 import os
 from libqtile import hook
+from libqtile.config import Screen
+from libqtile import bar, widget
 
 terminal = "alacritty"
 
@@ -118,7 +120,7 @@ layouts = [
     layout.MonadTall(
         margin=3,
         border_width=2,
-        ),
+    ),
     layout.Columns(border_focus_stack=["#89dceb", "#89dceb"], border_width=2),
     # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=3),
     layout.Max(),
@@ -252,3 +254,12 @@ wl_input_rules = None
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
+
+screens = [
+    Screen()
+]
+
+keys = [
+    Key([mod, "control"], "r", lazy.reload_config(),
+        lazy.spawn("~/.config/polybar/launch.sh")),
+]
